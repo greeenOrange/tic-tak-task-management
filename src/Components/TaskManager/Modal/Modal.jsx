@@ -1,11 +1,8 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { ExclamationTriangleIcon } from '@heroicons/react/24/solid'
 import { v4 as uuidv4 } from 'uuid';
-uuidv4();
 function Modal({ showModal, setShowModal, formData, setFormData, setIsFormDataVisible }) {
     const [inProcess, setInProcess] = useState([]);
-    const [formSubmissions, setFormSubmissions] = useState([]);
     
     const handleChange = (e) => {
         const { name, value } = e.target;

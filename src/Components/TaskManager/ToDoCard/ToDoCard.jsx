@@ -7,11 +7,9 @@ function ToDoCard({ formData, setFormData }) {
     const [formSubmissions, setFormSubmissions] = useState([]);
     const [cards, setCards] = useState([]);
     const storedFormData = localStorage.getItem('formData');
-
-    console.log(storedFormData);
+    
     const handleShowModal = () => {
         setShowModal(!showModal)
-        console.log(!showModal);
     };
 
     const handleClearLocalStorage = () => {

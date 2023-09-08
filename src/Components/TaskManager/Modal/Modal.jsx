@@ -1,7 +1,8 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 function Modal({ showModal, setShowModal, formData, setFormData, setIsFormDataVisible }) {
+    
     const [inProcess, setInProcess] = useState([]);
     
     const handleChange = (e) => {
@@ -9,7 +10,7 @@ function Modal({ showModal, setShowModal, formData, setFormData, setIsFormDataVi
         setFormData(
             {    ...formData,
                 [name]: value,
-                id: uuidv4(), task: inProcess,
+                 task: inProcess,
                 completed: false, isEditiong: false,
                 
             }
@@ -20,7 +21,7 @@ function Modal({ showModal, setShowModal, formData, setFormData, setIsFormDataVi
 
     const handleSubmit = (e) => {
         e.preventDefault();
-  const newCard = { ...formData, id: uuidv4() };
+  const newCard = { ...formData, };
   const existingData = JSON.parse(localStorage.getItem('formData')) || [];
   const updatedData = [...existingData, newCard];
   localStorage.setItem('formData', JSON.stringify(updatedData));
